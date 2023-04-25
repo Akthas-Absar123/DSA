@@ -7,7 +7,7 @@ struct node {
 };
 
 //Creating a new node
-struct node *CreateNewNode(int value){
+struct node *CreateNode(int value){
   struct node *temp = (struct node *)malloc(sizeof(struct node));
   temp->key = value;
   temp->left = temp->right = NULL;
@@ -26,7 +26,7 @@ void traverseInOrder(struct node *root) {
 // Insert a node
 struct node *insertNode(struct node *root, int key) {
   if (root == NULL){
-    return CreateNewNode(key);
+    return CreateNode(key);
   }
   else if (root->key < key){
     root->right = insertNode(root->right, key);
